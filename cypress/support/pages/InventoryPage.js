@@ -1,4 +1,4 @@
-import BasePage from './BasePage';
+const BasePage = require('./BasePage');
 
 /**
  * Page object for the Inventory page
@@ -108,4 +108,4 @@ class InventoryPage extends BasePage {
   }
 }
 
-export default InventoryPage;
+module.exports = InventoryPage;

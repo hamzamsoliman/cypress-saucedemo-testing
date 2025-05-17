@@ -1,4 +1,4 @@
-import BasePage from './BasePage';
+const BasePage = require('./BasePage');
 
 /**
  * Page object for the Checkout pages
@@ -200,4 +200,4 @@ class CheckoutPage extends BasePage {
   }
 }
 
-export default CheckoutPage;
+module.exports = CheckoutPage;

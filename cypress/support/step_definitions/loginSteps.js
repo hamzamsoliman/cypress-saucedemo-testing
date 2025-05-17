@@ -1,5 +1,6 @@
-import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
-import { LoginPage, InventoryPage } from '../pages';
+const { Given, When, Then } = require('cypress-cucumber-preprocessor').given;
+const LoginPage = require('../pages/LoginPage');
+const InventoryPage = require('../pages/InventoryPage');
 
 const loginPage = new LoginPage();
 const inventoryPage = new InventoryPage();

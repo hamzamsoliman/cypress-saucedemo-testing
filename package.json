@@ -15,7 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^6.0.4",
-    "cypress": "^14.3.3",
+    "cypress": "^10.11.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "esbuild-runner": "^2.2.2"
   },
@@ -23,6 +23,12 @@
     "nonGlobalStepDefinitions": true,
     "stepDefinitions": [
       "cypress/support/step_definitions/**/*.js"
-    ]
+    ],
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   }
 }

@@ -1,5 +1,6 @@
 const { defineConfig } = require('cypress');
-const cucumber = require('cypress-cucumber-preprocessor').default;
+const webpack = require('@cypress/webpack-preprocessor');
+const preprocessor = require('cypress-cucumber-preprocessor').default;
 
 module.exports = defineConfig({
   e2e: {
@@ -8,10 +9,10 @@ module.exports = defineConfig({
     baseUrl: 'https://www.saucedemo.com/',
     viewportWidth: 1280,
     viewportHeight: 720,
-    chromeWebSecurity: false
-  },
-  setupNodeEvents(on, config) {
-    on('file:preprocessor', cucumber());
-    return config;
+    chromeWebSecurity: false,
+    setupNodeEvents(on, config) {
+      on('file:preprocessor', preprocessor());
+      return config;
+    }
   }
 });

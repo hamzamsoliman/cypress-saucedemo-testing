@@ -1,4 +1,4 @@
-import BasePage from './BasePage';
+const BasePage = require('./BasePage');
 
 /**
  * Page object for the Cart page
@@ -123,4 +123,4 @@ class CartPage extends BasePage {
   }
 }
 
-export default CartPage;
+module.exports = CartPage;

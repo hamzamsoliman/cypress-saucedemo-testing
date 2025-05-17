@@ -1,4 +1,4 @@
-import BasePage from './BasePage';
+const BasePage = require('./BasePage');
 
 /**
  * Page object for the Login page
@@ -74,4 +74,4 @@ class LoginPage extends BasePage {
   }
 }
 
-export default LoginPage;
+module.exports = LoginPage;

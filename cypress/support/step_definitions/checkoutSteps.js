@@ -1,5 +1,6 @@
-import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
-import { CartPage, CheckoutPage } from '../pages';
+const { Given, When, Then } = require('cypress-cucumber-preprocessor').given;
+const CartPage = require('../pages/CartPage');
+const CheckoutPage = require('../pages/CheckoutPage');
 
 const cartPage = new CartPage();
 const checkoutPage = new CheckoutPage();

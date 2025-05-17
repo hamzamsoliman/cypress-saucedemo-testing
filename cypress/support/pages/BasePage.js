@@ -72,4 +72,4 @@ class BasePage {
   }
 }
 
-export default BasePage;
+module.exports = BasePage;
