@@ -1,28 +1,17 @@
 const { defineConfig } = require('cypress');
-const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
-const preprocessor = require('@badeball/cypress-cucumber-preprocessor');
-const createEsbuildPlugin = require('@badeball/cypress-cucumber-preprocessor/esbuild');
-
-async function setupNodeEvents(on, config) {
-  // This is required for the preprocessor to be able to generate JSON reports after each run
-  await preprocessor.addCucumberPreprocessorPlugin(on, config);
-
-  on('file:preprocessor', createBundler({
-    plugins: [createEsbuildPlugin.default(config)],
-  }));
-
-  // Make sure to return the config object as it might have been modified by the plugin
-  return config;
-}
+const cucumber = require('cypress-cucumber-preprocessor').default;
 
 module.exports = defineConfig({
   e2e: {
-    specPattern: "**/*.feature",
+    specPattern: "cypress/e2e/**/*.feature",
     supportFile: "cypress/support/e2e.js",
-    setupNodeEvents,
     baseUrl: 'https://www.saucedemo.com/',
     viewportWidth: 1280,
     viewportHeight: 720,
     chromeWebSecurity: false
   },
+  setupNodeEvents(on, config) {
+    on('file:preprocessor', cucumber());
+    return config;
+  }
 });
